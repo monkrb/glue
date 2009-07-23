@@ -15,10 +15,6 @@ require "sinatra/base"
 require "haml"
 require "sass"
 
-require "monk/glue/reloader"
-require "monk/glue/logger"
-require "monk/glue/settings"
-
 Monk = Module.new unless defined? Monk
 
 class Monk::Glue < Sinatra::Base
@@ -58,3 +54,7 @@ class Monk::Glue < Sinatra::Base
     end
   end
 end
+
+require "monk/glue/reloader"
+require "monk/glue/logger"
+require "monk/glue/settings"
