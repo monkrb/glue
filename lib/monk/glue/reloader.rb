@@ -1,7 +1,7 @@
 require "rack/reloader"
 
 # TODO Add documentation.
-class Sinatra::Reloader < Rack::Reloader
+class Monk::Glue::Reloader < Rack::Reloader
   def safe_load(file, mtime, stderr = $stderr)
     super
     Main.reset!

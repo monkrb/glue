@@ -15,9 +15,9 @@ require "sinatra/base"
 require "haml"
 require "sass"
 
-require "glue/reloader"
-require "glue/logger"
-require "glue/settings"
+require "monk/glue/reloader"
+require "monk/glue/logger"
+require "monk/glue/settings"
 
 Monk = Module.new unless defined? Monk
 
@@ -35,15 +35,17 @@ class Monk::Glue < Sinatra::Base
   use Rack::Session::Cookie
 
   configure :development do
-    use Sinatra::Reloader
+    use Monk::Glue::Reloader
   end
 
   configure :development, :test do
-    require "ruby-debug" rescue LoadError
+    begin
+      require "ruby-debug"
+    rescue LoadError
+    end
   end
 
   helpers do
-
     # TODO Add documentation.
     def haml(template, options = {}, locals = {})
       options[:escape_html] = true unless options.include?(:escape_html)
