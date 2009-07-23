@@ -19,8 +19,9 @@ require "glue/reloader"
 require "glue/logger"
 require "glue/settings"
 
-# TODO Add documentation.
-class MonkGlue < Sinatra::Base
+Monk = Module.new unless defined? Monk
+
+class Monk::Glue < Sinatra::Base
   set :dump_errors, true
   set :logging, true
   set :methodoverride, true
