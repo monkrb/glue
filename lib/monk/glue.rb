@@ -31,6 +31,8 @@ class Monk::Glue < Sinatra::Base
   use Rack::Session::Cookie
 
   configure :development do
+    require "monk/glue/reloader"
+
     use Monk::Glue::Reloader
   end
 
@@ -55,6 +57,5 @@ class Monk::Glue < Sinatra::Base
   end
 end
 
-require "monk/glue/reloader"
 require "monk/glue/logger"
 require "monk/glue/settings"
