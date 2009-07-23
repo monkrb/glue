@@ -9,5 +9,5 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "monk"
 
-  s.files = ["LICENSE", "lib/glue/logger.rb", "lib/glue/reloader.rb", "lib/glue/settings.rb", "lib/glue.rb", "monk-glue.gemspec"]
+  s.files = ["LICENSE", "lib/monk/glue/logger.rb", "lib/monk/glue/reloader.rb", "lib/monk/glue/settings.rb", "lib/monk/glue.rb", "monk-glue.gemspec"]
 end
